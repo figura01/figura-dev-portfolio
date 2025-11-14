@@ -24,10 +24,7 @@ const AdminCategoriesPage = async (props: {
   }>;
 }) => {
   const { page = "1", query: searchText } = await props.searchParams;
-  const categories = await getAllCategories({
-    page: Number(page),
-    query: searchText || "",
-  });
+  const categories = await getAllCategories();
 
   return (
     <div className="flex flex-col w-full px-6 space-y-8">
