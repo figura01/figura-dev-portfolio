@@ -113,9 +113,9 @@ export async function getAllProjects({
   });
 
   const dataCount = await prisma.project.count();
-
+  console.log("data: ", data, "typeof data: ", typeof data);
   return {
-    data,
+    data: convertToPlainObject(data),
     totalPages: Math.ceil(dataCount / limit),
   };
 }

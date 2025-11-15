@@ -23,8 +23,6 @@ const ProjectsPage = async (props: {
     query: searchText || "",
   });
 
-  console.log("dataProjects: ", dataProjects);
-
   const { data, totalPages } = dataProjects;
 
   const projects = data.map((p) => {
@@ -38,7 +36,7 @@ const ProjectsPage = async (props: {
       images: p.images,
       isFeatured: p.isFeatured,
       description: p.description,
-      createdAt: p.createdAt.toLocaleDateString(),
+      createdAt: new Date(p.createdAt).toLocaleString(),
     };
   });
 

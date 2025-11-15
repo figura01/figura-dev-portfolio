@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 const ProjectCard = ({ project }: { project: Project }) => {
-  console.log("project: ", project);
   return (
     <Link
       href={`/projects/${project.id}`}
