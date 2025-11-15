@@ -154,6 +154,9 @@ export async function getProjectById(projectId: string) {
   try {
     const data = await prisma.project.findFirst({
       where: { id: projectId },
+      include: {
+        category: true,
+      },
     });
     return convertToPlainObject(data);
   } catch (error) {
